@@ -16,6 +16,9 @@ use function explode;
 
 class AMQPTransportResolver extends AbstractAsyncTransportResolver
 {
+    public const string EXCHANGE_NAME = 'queue_exchange';
+    public const string EXCHANGE_TYPE = 'direct';
+
     public function __construct(
         AmqpTransportFactory $transportFactory,
         ?SerializerInterface $serializer = null
@@ -36,8 +39,8 @@ class AMQPTransportResolver extends AbstractAsyncTransportResolver
     {
         return [
             'exchange' => [
-                'name' => 'queue_exchange',
-                'type' => 'direct',
+                'name' => static::EXCHANGE_NAME,
+                'type' => static::EXCHANGE_TYPE,
             ],
             'queues' => [
                 $this->getQueue($dsn) => [

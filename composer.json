@@ -7,7 +7,7 @@
             "email": "ashterix69@gmail.com"
         }
     ],
-    "type" : "library",
+    "type" : "ufo-async-transport",
     "license": "MIT",
     "keywords": [
         "json-rpc",
@@ -38,5 +38,8 @@
     },
     "scripts": {
         "test": "phpunit"
+    },
+    "extra": {
+        "ufo-async-transport-builder": "Ufo\\Component\\AsyncAmqpTransport\\AMQPTransportConfigBuilder"
     }
 }
